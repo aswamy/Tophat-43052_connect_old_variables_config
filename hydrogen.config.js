@@ -4,8 +4,8 @@ export default defineConfig({
   shopify: {
     defaultCountryCode: 'CA',
     defaultLanguageCode: 'EN',
-    storeDomain: Oxygen.env.SHOPIFY_STORE_DOMAIN,
-    storefrontToken: Oxygen.env.SHOPIFY_STOREFRONT_API_PUBLIC_TOKEN,
+    storeDomain: Oxygen.env.PUBLIC_SHOPIFY_STORE_DOMAIN,
+    storefrontToken: Oxygen.env.PUBLIC_SHOPIFY_STOREFRONT_API_TOKEN,
     storefrontApiVersion: '2022-07',
   },
   session: CookieSessionStorage('__session', {
