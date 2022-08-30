@@ -1,13 +1,15 @@
 import {defineConfig, CookieSessionStorage} from '@shopify/hydrogen/config';
 
 export default defineConfig({
-  shopify: {
+  shopify: () => ({
     defaultCountryCode: 'CA',
     defaultLanguageCode: 'EN',
-    storeDomain: Oxygen.env.SHOPIFY_STORE_DOMAIN,
-    storefrontToken: Oxygen.env.SHOPIFY_STOREFRONT_API_PUBLIC_TOKEN,
+    storeDomain: Oxygen.env.PUBLIC_SHOPIFY_STORE_DOMAIN,
+    storefrontToken: Oxygen.env.PUBLIC_SHOPIFY_STOREFRONT_API_TOKEN,
+    privateStorefrontToken: Oxygen.env.PRIVATE_SHOPIFY_STOREFRONT_API_TOKEN,
+    storefrontId: Oxygen.env.PUBLIC_SHOPIFY_STOREFRONT_ID,
     storefrontApiVersion: '2022-07',
-  },
+  }),
   session: CookieSessionStorage('__session', {
     path: '/',
     httpOnly: true,
